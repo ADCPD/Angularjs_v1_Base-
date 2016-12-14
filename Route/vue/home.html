@@ -1,0 +1,17 @@
+
+    <div ng-repeat="post in posts">
+
+        <table border="1">
+            <tr>
+
+                <h4>{{post.username}}</h4>
+                <p>
+                    {{post.content}}
+                </p>
+                <a href="#/comments/{{post.id}}">{{post.comments.length}} commentaires</a>
+            </tr>
+        </table>
+
+    </div>
+
+

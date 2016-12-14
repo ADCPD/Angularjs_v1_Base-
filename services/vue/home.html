@@ -1,0 +1,33 @@
+<div class="row-fluid">
+    <div class="hero-unit">
+        <h1>Heading</h1>
+        <p>Tagline</p>
+        <p>
+            <a class="btn btn-primary btn-large">
+                Learn more
+            </a>
+        </p>
+    </div>
+</div>
+<div class="row-fluid">
+    <div ng-repeat="post in posts">
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading">{{post.company}}</h4>
+                <div class="media">
+                    {{post.content}}
+                </div>
+            </div>
+            <div class="media-footer">
+                <a ng-href="#!/comments/{{post.id}}">
+                    <button>
+                        {{post.comments.length}} commentaires
+                    </button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

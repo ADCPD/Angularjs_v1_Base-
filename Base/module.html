@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="myApp">
+<div class="listFromJson">
+
+    <div ng-controller="PersonsCrtl" ng-init="query='Joni'">
+
+        <!-- faire de la sorte d'affiche que la resultat Joni en premier-->
+        <input type="text" title="name" placeholder="Entrer a name here" ng-model="query">
+
+        <select ng-model="order">
+            <option value="age">Age</option>
+            <option value="first">Firstname</option>
+            <option value="last">Lastname</option>
+        </select>
+
+
+        <table border="1" width="260px">
+
+            <thead>
+            <tr>
+                <th>first-name</th>
+                <th>last-name</th>
+                <th>age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>-->
+            <!--<td>{{ persons[3].first}}</td>-->
+            <!--<td>{{ persons[3].last }}</td>-->
+            <!--<td>{{ persons[3].age }}</td>-->
+            <!--</tr>-->
+            <!--<tr ng-repeat="person in persons  | filter:firstname | orderBy:'+age'">-->
+            <tr ng-repeat="person in persons  | filter:query | orderBy: order">
+                <td>{{ person.first}}</td>
+                <td>{{ person.last }}</td>
+                <td>{{ person.age }}</td>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.14/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('PersonsCrtl', function ($scope) {
+        console.log($scope);
+        $scope.persons = [
+            {
+                first: 'Angel',
+                last: 'Rosario',
+                age: 22
+            },
+            {
+                first: 'Joni',
+                last: 'Hodge',
+                age: 31
+            },
+            {
+                first: 'Kendra',
+                last: 'Blackwell',
+                age: 40
+            },
+            {
+                first: 'Delacruz',
+                last: 'Mack',
+                age: 29
+            },
+            {
+                first: 'Foster',
+                last: 'Maxwell',
+                age: 21
+            },
+            {
+                first: 'Faye',
+                last: 'Deleon',
+                age: 28
+            },
+            {
+                first: 'William',
+                last: 'Dickson',
+                age: 35
+            }
+        ];
+
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js"></script>
+</head>
+<body ng-app>
+<div class="listFromJson">
+
+    <input type="text" title="name" placeholder="Entrer a name here" ng-model="firstname">
+    <select ng-model="order">
+        <option value="age">Age</option>
+        <option value="first">Firstname</option>
+        <option value="last">Lastname</option>
+    </select>
+
+    <div ng-init="
+       persons = [
+  {
+    first: 'Angel',
+    last: 'Rosario',
+    age: 22
+    },
+    {
+    first: 'Joni',
+    last: 'Hodge',
+    age: 31
+    },
+    {
+    first: 'Kendra',
+    last: 'Blackwell',
+    age: 40
+    },
+    {
+    first: 'Delacruz',
+    last: 'Mack',
+    age: 29
+    },
+    {
+    first: 'Foster',
+    last: 'Maxwell',
+    age: 21
+    },
+    {
+    first: 'Faye',
+    last: 'Deleon',
+    age: 28
+    },
+    {
+    first: 'William',
+    last: 'Dickson',
+    age: 35
+    }
+    ]
+    ">
+
+        <table border="1" width="260px">
+
+            <thead>
+            <tr>
+                <th>first-name</th>
+                <th>last-name</th>
+                <th>age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr ng-repeat="person in persons  | filter:firstname | orderBy:'+age'">-->
+            <tr ng-repeat="person in persons  | filter:firstname | orderBy: order">
+                <td>{{ person.first}}</td>
+                <td>{{ person.last }}</td>
+                <td>{{ person.age }}</td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+</body>
+</html>

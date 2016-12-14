@@ -1,0 +1,56 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="hero-unit">
+            <h1>Commentaires</h1>
+        </div>
+    </div>
+</div>
+<!-- il  faut  attendre 2 secondes avant le chargement des données -->
+<div class="row-fluid" ng-show="loading">Loading data ...</div>
+<!-- si les 2 secondes ne sont pas ecoulé, il y a pas d'affichage de données  -->
+<div class="row-fluid" ng-hide="loading">
+    <div class="span12">
+        <a ng-href="#!\" class="btn btn-primary btn-block">Return to posts</a>
+        <hr>
+        <div class="well" ng-repeat="comment in comments track by $index">
+            <b>username : </b>{{ comment.username}}<br/>
+            <b>City : </b>{{ comment.city}}<br/>
+            <b>Email : </b>{{ comment.city}}<br/>
+            <b>Content : </b>
+            <p style="text-align: justify">
+                {{ comment.content}}
+            </p>
+        </div>
+
+
+        <form ng-submit="addComment()" class="form-horizontal" novalidate>
+            <div class="control-group">
+                <input type="text" placeholder="username" ng-model="newComment.username"/>
+            </div>
+            <div class="control-group">
+                <input type="text" placeholder="city" ng-model="newComment.city"/>
+            </div>
+            <div class="control-group">
+                <input type="text" placeholder="email" ng-model="newComment.email"/>
+            </div>
+            <div class="control-group">
+                <textarea rows="3" placeholder="content" ng-model="newComment.content"></textarea>
+            </div>
+            <div class="control-group">
+                <input type="submit" value="Send">
+            </div>
+
+        </form>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

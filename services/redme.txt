@@ -1,0 +1,13 @@
+Les models angularjs peuvent prendre plusieur format :
+ ->  factory : returne directement ce qui retourne la fonction
+ ->  Services : retuourne une nouvelle fonction à chaque fois
+ -> Provider
+
+
+
+ Model using :
+  -> scope
+  -> factory
+  -> service
+  -> routing
+  -> controller

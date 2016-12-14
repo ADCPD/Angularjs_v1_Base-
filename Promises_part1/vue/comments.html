@@ -1,0 +1,31 @@
+<div class="row-fluid">
+    <div class="hero-unit">
+        <h1>Commentaires</h1>
+    </div>
+</div>
+<!-- il  faut  attendre 2 secondes avant le chargement des données -->
+<div class="row-fluid" ng-show="loading">Loading data ...</div>
+<!-- si les 2 secondes ne sont pas ecoulé, il y a pas d'affichage de données  -->
+<div class="row-fluid" ng-hide="loading">
+    <a ng-href="#!\" class="btn btn-primary btn-block">Return to posts</a>
+    <hr>
+    <div class="well" ng-repeat="comment in comments">
+        <b>username : </b>{{ comment.username}}<br/>
+        <b>City : </b>{{ comment.city}}<br/>
+        <b>Email : </b>{{ comment.city}}<br/>
+        <b>Content : </b>
+        <p style="text-align: justify">
+            {{ comment.content}}
+        </p>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+

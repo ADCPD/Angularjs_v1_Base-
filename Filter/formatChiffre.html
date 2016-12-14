@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="app/ressources/css/bootstrap.min.css" rel="stylesheet"/>
+    <title>Title</title>
+
+</head>
+
+<body ng-app="CommentsApp">
+<div class="container" ng-controller="CommentsCtrl">
+    <h3>Commentaires {{date | date:'medium'}}</h3>
+
+    <!--  | filter:'molestiae' : affiche tous les commentaires ou  il  existe le mot 'molestiae'  -->
+    <!--<ul ng-repeat="comment in  comments | filter:'molestiae' ">-->
+
+    <div class="formatChiffle">
+        L'arrondit de <b>{{chiffre}}</b> egaul à <b>{{ chiffre|simple_round }}</b> <br>
+        L'arrondit de <b>{{chiffre}}</b> selon le nombre de chiffre apres la virgule egual à <b>
+        {{ chiffre|complexe_round:4}}
+
+
+    </b>
+    </div>
+
+
+</div>
+
+<hr>
+<small>@ Model AngularJS v.1.6.0</small>
+<script src="app/ressources/js/jquery.js"></script>
+<script src="app/ressources/js/bootstrap_min_232.js"></script>
+<script src="app/ressources/js/angular_min_160.js"></script>
+<script src="app/config/app_chiffre.js"></script>
+
+</body>
+</html>

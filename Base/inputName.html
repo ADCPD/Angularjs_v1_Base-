@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js"></script>
+</head>
+<body>
+
+<div class="Input">
+    <label>Name</label>
+    <input type="text" title="name" placeholder="Entrer a name here" ng-model="yourName">
+    <hr/>
+    <h1>Hello {{ yourName}}</h1>
+</div>
+<hr/>
+
+<div class="table&list">
+    <div ng-init="users=['ilyas','valery','alex']"></div>
+    <h4>Array angularjs</h4> users : {{users}}
+    <ul>
+        <h4>Les filters angularjs</h4>
+        <li ng-repeat="user in users|filter:'val'">{{user|uppercase}}</li>
+    </ul>
+    <hr>
+    <h4>Filter system</h4>
+    <input type="text" title="name" placeholder="Entrer a name here" ng-model="query">
+    <ul>
+        <li ng-repeat="user in users|filter:query">{{user|uppercase}}</li>
+    </ul>
+</div>
+</body>
+</html>
